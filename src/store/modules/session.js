@@ -49,6 +49,13 @@ const actions = {
         commit("destroy");
         localStorage.removeItem("@AppVuex[session]");
     },
+
+    updateUserCurrentSession({ commit }, user) {
+        commit("updateUserCurrentSession", user);
+        const session = JSON.parse(localStorage.getItem("@AppVuex[session]"));
+        const ns = { ...session, user };
+        localStorage.setItem("@AppVuex[session]", JSON.stringify(ns));
+    },
 };
 
 // Mutations
@@ -65,6 +72,11 @@ const mutations = {
     setError(state, error) {
         state.error = error;
         state.is_authorized = false;
+    },
+    updateUserCurrentSession(state, user) {
+        state.error = false;
+        state.data.user = user;
+        state.data.is_authorized = true;
     },
 };
 
