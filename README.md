@@ -1,4 +1,4 @@
-# Vuex Login (Logn simples s/api)
+# Vuex Login (Login simples sem api)
 
 Simples login usando _vuex_, não será usado API para fazer validação dos dados (email e senha), o objetivo aqui é apenas gerenciar estado com vuex e compartilhar os estados entre compoentes.
 
